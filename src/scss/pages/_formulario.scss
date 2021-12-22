@@ -1,0 +1,83 @@
+.rick-fondo {
+	position: absolute;
+	filter: blur(7.5px);
+	img {
+		width: 100vw;
+		height: 100vh;
+	}
+}
+
+.formulario {
+	@include display-flex(center, center, column);
+	padding: 1rem;
+	box-shadow: 5px 5px 20px 5px $color-text, -1px -1px 10px 2px $color-text;
+	width: 500px;
+	min-width: 300px;
+	height: auto;
+	position: relative;
+
+	h1 {
+		margin-bottom: 1rem;
+		color: $color-text;
+	}
+
+	h2 {
+		font-weight: 400;
+		color: $color-text-2;
+	}
+
+	a {
+		font-size: 1.5rem;
+		text-decoration: none;
+		color: $color-text-2;
+
+		&:hover {
+			border-bottom: 1px solid $color-text-2;
+		}
+	}
+	.formulario-form {
+		z-index: 1;
+	}
+
+	form {
+		@include display-flex(center, flex-start, column);
+		width: 80%;
+
+		label {
+			color: $color-text;
+			margin-bottom: 0.3rem;
+		}
+
+		input {
+			background-color: rgba(255, 255, 255, 0.5);
+			border: 0;
+			margin-bottom: 2rem;
+			font-size: 1.5rem;
+			padding: 1rem;
+			height: 40px;
+			width: 100%;
+			transition: 0.3s;
+
+			&:focus {
+				outline: 1px solid $color-text;
+			}
+		}
+
+		.boton_formulario {
+			cursor: pointer;
+			margin-bottom: 1rem;
+			background-color: rgba(0, 0, 0, 0);
+			font-size: 1.3rem;
+			width: 120px;
+			height: 35px;
+		}
+	}
+
+	.registro {
+		display: flex;
+
+		h2 {
+			margin-right: 0.5rem;
+		}
+	}
+}
