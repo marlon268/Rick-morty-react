@@ -1,5 +1,6 @@
 export const types = {
-	eventLoadCharacters: '[event Load characters',
+	eventLoadCharacters: '[event] Load characters',
+	eventRemoveCharactersOfHome: '[event] Remove characters of home',
 	eventAddToFavotire: '[event] Add favotire',
 	eventDeleteToFavotire: '[event] Delete favotire',
 

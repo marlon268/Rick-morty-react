@@ -1,41 +1,15 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Routes as BRoutes, Route } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 import { Home } from '../pages/home/';
 import { FondoContainer } from '../components/FondoContainer';
-import { Loading } from '../components/Loading';
 import { NavBar } from '../components/NavBar';
 import logoRick from '../assets/rickymorty.png';
-import { useGetCharacters } from '../hooks/useGetCharacters';
-import { addCharacters } from '../redux/actions/characters';
 
 export const DashBoardRouter = () => {
-	const dispatch = useDispatch();
 	const { userName } = useSelector((state) => state.login);
 	const { characters } = useSelector((state) => state.storeCharacters);
-	const [pages, setPages] = useState(1);
-
-	const changePage = () => {
-		setPages(pages + 1);
-	};
-
-	const getCharacters = useGetCharacters(
-		`https://rickandmortyapi.com/api/character/?page=${pages}`
-	);
-
-	useEffect(() => {
-		dispatch(addCharacters(getCharacters));
-	}, [getCharacters]);
-
-	if (characters.length === 0) {
-		return (
-			<>
-				<FondoContainer cargando={true} />
-				<Loading />
-			</>
-		);
-	}
 
 	return (
 		<>
@@ -49,12 +23,7 @@ export const DashBoardRouter = () => {
 			<div className="container_dashboard">
 				<NavBar />
 				<BRoutes>
-					<Route
-						path="/"
-						element={
-							<Home characters={characters} changePage={changePage} />
-						}
-					/>
+					<Route path="/" element={<Home characters={characters} />} />
 					<Route
 						path="/character/:id"
 						element={<Home characters={characters} />}

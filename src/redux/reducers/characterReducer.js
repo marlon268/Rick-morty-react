@@ -13,6 +13,12 @@ export const characterReducer = (state = initialState, action) => {
 				characters: [...state.characters, ...action.payload],
 			};
 
+		case types.eventRemoveCharactersOfHome:
+			return {
+				...state,
+				characters: [],
+			};
+
 		default:
 			return state;
 	}

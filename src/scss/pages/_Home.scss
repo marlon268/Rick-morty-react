@@ -69,5 +69,63 @@
 				}
 			}
 		}
+
+		.home_cargar-mas {
+			border: none;
+			background-color: rgba(255, 255, 255, 0);
+			cursor: pointer;
+			height: 300px;
+			width: 300px;
+			transition: 0.5s;
+
+			&:hover {
+				transform: scale(1.1);
+			}
+		}
+
+		.home_cargando {
+			@include display-flex(center, center, column);
+			width: 300px;
+			height: 300px;
+			@keyframes ldio-0rgqc6yvldb {
+				0% {
+					transform: translate(-50%, -50%) rotate(0deg);
+				}
+				100% {
+					transform: translate(-50%, -50%) rotate(360deg);
+				}
+			}
+			.ldio-0rgqc6yvldb div {
+				position: absolute;
+				width: 76.8px;
+				height: 76.8px;
+				border: 12.8px solid #290908;
+				border-top-color: transparent;
+				border-radius: 50%;
+			}
+			.ldio-0rgqc6yvldb div {
+				animation: ldio-0rgqc6yvldb 1s linear infinite;
+				top: 64px;
+				left: 64px;
+			}
+			.loadingio-spinner-rolling-mo7grisetcm {
+				width: 128px;
+				height: 128px;
+				display: inline-block;
+				overflow: hidden;
+				background: rgba(255, 255, 255, 0);
+			}
+			.ldio-0rgqc6yvldb {
+				width: 100%;
+				height: 100%;
+				position: relative;
+				transform: translateZ(0) scale(1);
+				backface-visibility: hidden;
+				transform-origin: 0 0; /* see note above */
+			}
+			.ldio-0rgqc6yvldb div {
+				box-sizing: content-box;
+			}
+		}
 	}
 }
