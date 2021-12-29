@@ -1,6 +1,7 @@
 .rick-fondo {
 	position: absolute;
 	filter: blur(7.5px);
+	z-index: -1;
 	img {
 		width: 100vw;
 		height: 100vh;
@@ -34,9 +35,6 @@
 		&:hover {
 			border-bottom: 1px solid $color-text-2;
 		}
-	}
-	.formulario-form {
-		z-index: 1;
 	}
 
 	form {

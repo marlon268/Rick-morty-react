@@ -1,29 +1,73 @@
-.fondo_container {
-	width: 100%;
-	position: absolute;
-	background-size: cover;
-	background-position: center;
-	background-size: cover;
-	object-fit: cover;
-	object-position: center;
-	z-index: -1;
-
-	img {
-		width: 100vw;
-		height: 100vh;
-		object-fit: cover;
-		object-position: center center;
-	}
-}
-
-.blur {
-	filter: blur(5px);
-}
-
 .home {
 	@include display-flex(center, center, column);
-	background-color: $background-color;
-	margin-left: 50px;
-	width: 80%;
-	height: 90%;
+	border-radius: 5%;
+	width: 100%;
+	height: 95%;
+
+	.home_herolist {
+		@include display-flex(center, center, row);
+		flex-wrap: wrap;
+		overflow-y: auto;
+		width: 100%;
+		height: 100%;
+
+		&::-webkit-scrollbar {
+			cursor: pointer;
+			border: 1px solid darken($background-color, $amount: 20%);
+			border-radius: 10px;
+			width: 15px;
+		}
+
+		&::-webkit-scrollbar-thumb {
+			background-color: darken($background-color, $amount: 20%);
+			border-radius: 10px;
+		}
+
+		.home_hero {
+			@include display-flex(center, center, column);
+			background-color: darken($background-color, $amount: 20%);
+			border: 1px solid darken($background-color, $amount: 20%);
+			border-radius: 5%;
+			box-shadow: 5px 5px 15px 5px black;
+			width: 350px;
+			height: 500px;
+			margin: 20px;
+			transition: 0.5s;
+			text-align: center;
+
+			&:hover {
+				transform: scale(1.05);
+			}
+
+			.home_hero-img {
+				height: 300px;
+				width: 300px;
+				img {
+					border-radius: 50%;
+					width: 100%;
+				}
+			}
+
+			.home_hero-text {
+				@include display-flex(space-between, center, column);
+				padding: 10px 0;
+				height: 100%;
+				width: 100%;
+			}
+
+			.home_nav {
+				@include display-flex(space-between, center, row);
+				margin-bottom: 10px;
+				width: 70%;
+				img {
+					cursor: pointer;
+					width: 30px;
+				}
+
+				.home_nav-animate {
+					animation: likeAnimate 0.5s;
+				}
+			}
+		}
+	}
 }

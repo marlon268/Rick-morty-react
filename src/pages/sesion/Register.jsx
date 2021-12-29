@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import fondoSesion from '../../../public/assets/rickfondo.jpg';
+import fondoSesion from '../../assets/rickfondo.jpg';
 
 export const Register = () => {
 	return (

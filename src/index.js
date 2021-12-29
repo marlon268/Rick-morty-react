@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './Normalize.css';
+
 import { RickAndMorty } from './RickAndMorty';
+import './Normalize.css';
 import './scss/global.scss';
 
 ReactDOM.render(
