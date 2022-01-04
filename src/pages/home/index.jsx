@@ -21,14 +21,14 @@ export const Home = () => {
 		setLoading(true);
 		setTimeout(() => {
 			setPage(page + 1);
-		}, 1000);
+		}, 500);
 	};
 
 	useEffect(() => {
 		setTimeout(() => {
 			dispatch(addStartCharacters(url));
 			setLoading(false);
-		}, 1000);
+		}, 500);
 	}, [dispatch, url]);
 
 	useEffect(() => {
@@ -48,15 +48,21 @@ export const Home = () => {
 		return (
 			<div className="home animate__animated animate__fadeIn">
 				<section className="home_herolist">
-					{characters.map((character) => {
-						return <CardCharacter {...character} key={character.id} />;
+					{characters.map((character, index) => {
+						return (
+							<CardCharacter
+								index={index}
+								character={character}
+								key={character.id}
+							/>
+						);
 					})}
 
 					{loading ? (
 						<div className="home_cargando">
-							<div class="loadingio-spinner-rolling-mo7grisetcm">
-								<div class="ldio-0rgqc6yvldb">
-									<div></div>
+							<div className="loadingio-spinner-rolling-mo7grisetcm">
+								<div className="ldio-0rgqc6yvldb">
+									<div />
 								</div>
 							</div>
 						</div>
@@ -69,8 +75,6 @@ export const Home = () => {
 						</button>
 					)}
 				</section>
-
-				<section className="home_nav"></section>
 			</div>
 		);
 	}

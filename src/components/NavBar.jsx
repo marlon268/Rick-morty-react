@@ -23,12 +23,16 @@ export const NavBar = () => {
 	return (
 		<nav className="nav_container animate__animated animate__fadeIn">
 			<div className="nav_container-item">
-				<img src={home} alt="home" />
-				<h2>Inicio</h2>
+				<Link to="/">
+					<img src={home} alt="home" />
+					<h2>Inicio</h2>
+				</Link>
 			</div>
 			<div className="nav_container-item">
-				<img src={heart} alt="favorite" />
-				<h2>Favoritos</h2>
+				<Link to="/favorite">
+					<img src={heart} alt="favorite" />
+					<h2>Favoritos</h2>
+				</Link>
 			</div>
 			<div className="nav_container-item">
 				<Link to="/">

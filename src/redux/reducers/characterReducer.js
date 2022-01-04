@@ -18,6 +18,18 @@ export const characterReducer = (state = initialState, action) => {
 				...state,
 				characters: [],
 			};
+		case types.eventAddToFavotire:
+			return {
+				...state,
+				favoriteCharacters: [...state.favoriteCharacters, action.payload],
+			};
+		case types.eventDeleteToFavotire:
+			return {
+				...state,
+				favoriteCharacters: state.favoriteCharacters.filter(
+					(character) => character.id !== action.payload.id
+				),
+			};
 
 		default:
 			return state;

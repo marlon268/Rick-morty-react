@@ -18,7 +18,7 @@
 }
 
 .container_dashboard {
-	@include display-flex(center, center, row);
+	@include display-flex(space-between, center, row);
 	width: 100vw;
 	height: 90vh;
 	position: relative;

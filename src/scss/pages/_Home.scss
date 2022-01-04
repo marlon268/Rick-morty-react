@@ -87,6 +87,7 @@
 			@include display-flex(center, center, column);
 			width: 300px;
 			height: 300px;
+
 			@keyframes ldio-0rgqc6yvldb {
 				0% {
 					transform: translate(-50%, -50%) rotate(0deg);
@@ -128,4 +129,10 @@
 			}
 		}
 	}
+}
+
+.cargando {
+	@include display-flex(center, center, row);
+	width: 100%;
+	height: 100%;
 }

@@ -6,6 +6,8 @@ import { Home } from '../pages/home/';
 import { FondoContainer } from '../components/FondoContainer';
 import { NavBar } from '../components/NavBar';
 import logoRick from '../assets/rickymorty.png';
+import { Character } from '../pages/character';
+import { Favorite } from '../pages/favorite';
 
 export const DashBoardRouter = () => {
 	const { userName } = useSelector((state) => state.login);
@@ -23,11 +25,9 @@ export const DashBoardRouter = () => {
 			<div className="container_dashboard">
 				<NavBar />
 				<BRoutes>
-					<Route path="/" element={<Home characters={characters} />} />
-					<Route
-						path="/character/:id"
-						element={<Home characters={characters} />}
-					/>
+					<Route path="/" element={<Home />} />
+					<Route path="/favorite" element={<Favorite />} />
+					<Route path="character/:characterId" element={<Character />} />
 				</BRoutes>
 			</div>
 		</>

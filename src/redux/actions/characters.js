@@ -23,3 +23,13 @@ export const addStartCharacters = (url) => {
 		}
 	};
 };
+
+export const addToFavoriteCharacter = (character) => ({
+	type: types.eventAddToFavotire,
+	payload: character,
+});
+
+export const deleteToFavotireCharacter = (character) => ({
+	type: types.eventDeleteToFavotire,
+	payload: character,
+});
