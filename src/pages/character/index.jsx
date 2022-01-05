@@ -2,7 +2,7 @@ import React from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 
 import { Loading } from '../../components/Loading';
-import { useCharacter } from '../../helpers/useCharacter';
+import { useCharacter } from '../../hooks/useCharacter';
 import volver from '../../assets/return.png';
 
 export const Character = () => {

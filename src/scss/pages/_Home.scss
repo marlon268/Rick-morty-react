@@ -1,8 +1,50 @@
 .home {
 	@include display-flex(center, center, column);
 	border-radius: 5%;
+	position: relative;
 	width: 100%;
 	height: 95%;
+
+	form {
+		.form {
+			background-color: darken($background-color, $amount: 20%);
+			&:active {
+				border: 1px solid lighten(black, 30%);
+			}
+
+			input {
+				margin-left: 5px;
+				background-color: transparent;
+				border: none;
+				color: $color-text;
+				outline: none;
+				font-size: 1.2rem;
+				height: 40px;
+				width: 150px;
+				margin-right: 10px;
+
+				&::placeholder {
+					color: lighten($color-text, 20%);
+				}
+			}
+
+			button {
+				border: 1px solid lighten(black, 30%);
+				background-color: transparent;
+				width: 50px;
+				height: 30px;
+				cursor: pointer;
+				margin-right: 10px;
+			}
+		}
+	}
+
+	.home_no-favorite {
+		font-size: 3rem;
+		text-align: center;
+		color: #000000;
+		background-image: linear-gradient(62deg, #fb5800 0%, #fbb200 100%);
+	}
 
 	.home_herolist {
 		@include display-flex(center, center, row);
@@ -30,7 +72,7 @@
 			border-radius: 5%;
 			box-shadow: 5px 5px 15px 5px black;
 			width: 350px;
-			height: 500px;
+			height: 420px;
 			margin: 20px;
 			transition: 0.5s;
 			text-align: center;

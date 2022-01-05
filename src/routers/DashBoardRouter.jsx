@@ -8,6 +8,7 @@ import { NavBar } from '../components/NavBar';
 import logoRick from '../assets/rickymorty.png';
 import { Character } from '../pages/character';
 import { Favorite } from '../pages/favorite';
+import { Search } from '../pages/search';
 
 export const DashBoardRouter = () => {
 	const { userName } = useSelector((state) => state.login);
@@ -27,6 +28,7 @@ export const DashBoardRouter = () => {
 				<BRoutes>
 					<Route path="/" element={<Home />} />
 					<Route path="/favorite" element={<Favorite />} />
+					<Route path="/search" element={<Search />} />
 					<Route path="character/:characterId" element={<Character />} />
 				</BRoutes>
 			</div>

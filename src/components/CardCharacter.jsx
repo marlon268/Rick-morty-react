@@ -42,9 +42,6 @@ export const CardCharacter = ({ character, index }) => {
 			</div>
 			<div className="home_hero-text">
 				<h1>{name}</h1>
-				<h2>Specie: {species}</h2>
-				<h2>Origin: {origin.name}</h2>
-				<h2>Status: {status}</h2>
 			</div>
 			<div className="home_nav">
 				<img

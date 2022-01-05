@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import home from '../assets/hogar.png';
 import heart from '../assets/heart.png';
@@ -11,6 +11,7 @@ import { startLogout } from '../redux/actions/auth';
 export const NavBar = () => {
 	const navigate = useNavigate();
 	const dispatch = useDispatch();
+	const { favoriteCharacters } = useSelector((state) => state.storeCharacters);
 
 	const handleExit = () => {
 		dispatch(startLogout());
@@ -29,13 +30,14 @@ export const NavBar = () => {
 				</Link>
 			</div>
 			<div className="nav_container-item">
+				<p className="nav_container-item_p">{favoriteCharacters.length}</p>
 				<Link to="/favorite">
 					<img src={heart} alt="favorite" />
 					<h2>Favoritos</h2>
 				</Link>
 			</div>
 			<div className="nav_container-item">
-				<Link to="/">
+				<Link to="/search">
 					<img src={search} alt="search" />
 					<h2>Buscar</h2>
 				</Link>

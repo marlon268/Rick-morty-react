@@ -1,17 +1,17 @@
 import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 import { CardCharacter } from '../../components/CardCharacter';
 
 export const Favorite = () => {
 	const { favoriteCharacters } = useSelector((state) => state.storeCharacters);
 
-	const dispatch = useDispatch();
-
 	if (favoriteCharacters.length === 0) {
 		return (
 			<div className="home animate__animated animate__fadeIn">
-				<h1>No has agregado personajes favoritos aún</h1>
+				<h1 className="home_no-favorite">
+					No tienes personajes agregados a favoritos
+				</h1>
 			</div>
 		);
 	} else {
